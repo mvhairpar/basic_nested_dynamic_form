@@ -15,6 +15,7 @@ class ParentsController < ApplicationController
   # GET /parents/new
   def new
     @parent = Parent.new
+    child = @parent.children.build
   end
 
   # GET /parents/1/edit
@@ -69,6 +70,6 @@ class ParentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parent_params
-      params.require(:parent).permit(:parent_name)
+      params.require(:parent).permit(:parent_name, children_attributes: [:id, :child_name, :parent_id, :_destroy] )
     end
 end

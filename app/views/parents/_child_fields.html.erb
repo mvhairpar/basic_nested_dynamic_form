@@ -1,0 +1,15 @@
+<div class="removable">
+  <%= f.label :child_name %><br />
+  <%= f.text_field :child_name %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove Child", "#", class: "remover_link"  %>
+</div>
+
+<script type="text/javascript">
+ $('document').ready( function() {
+    $('.remover_link').click(function(event){
+      $(this).prev("input[type=hidden").val("1");
+      $(this).closest('.removable').hide();
+    });
+  });
+</script>

@@ -2,7 +2,18 @@
 
 <p>
   <strong>Parent name:</strong>
+  <br />
   <%= @parent.parent_name %>
+</p>
+
+<p>
+  <strong>Child names:</strong>
+    <br />
+    <% @parent.children.each do |child| %>
+    <%= child.child_name %>
+    <br />
+  <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_parent_path(@parent) %> |

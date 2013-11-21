@@ -15,6 +15,15 @@
     <%= f.label :parent_name %><br>
     <%= f.text_field :parent_name %>
   </div>
+
+  <div class="fields_for_children">
+    <%= f.fields_for :children  do |child_form| %>
+     <%= render 'child_fields', f: child_form %>
+    <% end %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
