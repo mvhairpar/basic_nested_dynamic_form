@@ -1,6 +1,15 @@
 class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
+def display_partial
+
+  respond_to do |format|
+    format.html # show_rec_horses.html.erb
+    format.js   # show_rec_horses.js.erb
+  end
+end
+
+
   # GET /parents
   # GET /parents.json
   def index

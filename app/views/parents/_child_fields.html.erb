@@ -1,53 +1,9 @@
 
-<div class="removable fields">
+<div class='removable fields'>
   <%= f.label :child_name %><br />
   <%= f.text_field :child_name %>
-  <%= f.hidden_field :_destroy %>
-  <%= link_to "Remove Child", "#", class: "remover_link"  %>
+
+ 
 </div>
 
 
- <%= link_to "Adding cloned fields", "#", class: "cloner_link"  %>
- <br />
-<%= link_to_function('teserater', "alert('Hello world!')") %>
-<br />
-<%= link_to_function('teserater2', "add_fields") %>
-<br />
-
-<span class="append_bloc">append block</span>
-
-<script type="text/javascript">
- $('document').ready( function() {
-    $('.remover_link').click(function(event){
-      $(this).prev("input[type=hidden").val("1");
-      $(this).closest('.removable').hide();
-
-    });
-
-$('.cloner_link').click(function(event){
-
-     
-      $('.append_bloc').after("<div class='removable fields'><label for='parent_children_attributes_0_child_name'>Child name</label><br><input id='parent_children_attributes_0_child_name' name='parent[children_attributes][0][child_name]' type='text'><input id='parent_children_attributes_0__destroy' name='parent[children_attributes][0][_destroy]' type='hidden' value='false'><a class='remover_link' href='#'>Remove Child</a></div>");
-      event.preventDefaults;
-
-    });
-
-
-    function add_fields_template(link, association, content) {
-     var new_id = new Date().getTime();
-     var regexp = new RegExp("new_" + association, "g")
-     $(link).up().insert({
-     before: content.replace(regexp, new_id)
-     });
-    };
-
-    function add_fields() {
-     alert('Hello world!');
-    };
-
-
-  });
-
-
-
-</script>
