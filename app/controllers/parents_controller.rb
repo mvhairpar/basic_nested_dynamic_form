@@ -24,7 +24,6 @@ end
   # GET /parents/new
   def new
     @parent = Parent.new
-    child = @parent.children.build
   end
 
   # GET /parents/1/edit

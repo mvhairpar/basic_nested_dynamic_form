@@ -18,13 +18,16 @@
 
   <div class="fields_for_children">
     <%= f.fields_for :children  do |child_form| %>
-     <%= render 'child_fields', f: child_form %>
-    <% end %>
+    <%= child_form.label :child_name %>
     <br />
-    <div id="code_destination">More child fields to go here</div>
-    <br />
+<%= child_form.text_field :child_name %>
+<%= child_form.link_to_remove "Remove child" %>
+
+        <% end %>
+   
+    
   </div>
-<p id='my_parent'><%= link_to "link for adding the children", '#' %></p> 
+<p id='my_parent'><%= f.link_to_add "Add child", :children %></p> 
 
  
    <br />
